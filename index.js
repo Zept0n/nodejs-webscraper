@@ -195,7 +195,7 @@ async function scrapeAndSaveBooks(startPage, endPage) {
     }
 }
 
-//TODO: scheduler
+//TODO: scheduler // test
 
 // Start the application
 async function start() {
