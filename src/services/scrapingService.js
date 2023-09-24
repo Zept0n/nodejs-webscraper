@@ -55,7 +55,6 @@ async function scrapeBooksFromPage(url) {
 
         if (!pageLimitScraped) {
             pageLimit = parseInt($('.current').text().trim().split(" ")[3], 10);
-            console.log(pageLimit);
             pageLimitScraped = true;
         }
         return pageBooks;
@@ -72,7 +71,7 @@ async function scrapeBooksFromPage(url) {
  * pageLimit - Page to stop scraping at.
  * returns an array of book objects.
  */
-async function scrapeBooksFromMultiplePages(baseUrl,startPage, endPage) {
+async function scrapeBooksFromMultiplePages(startPage, endPage) {
     const allBooks = [];
     const upperBound = Math.min(endPage, pageLimit);
 
@@ -90,3 +89,4 @@ async function scrapeBooksFromMultiplePages(baseUrl,startPage, endPage) {
     return allBooks;
 }
 
+module.exports= scrapeBooksFromMultiplePages;
